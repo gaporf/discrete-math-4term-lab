@@ -1,0 +1,21 @@
+2
+S 0 _ -> S _ > 0 >
+S 1 _ -> S _ > 1 >
+S a _ -> Sl a ^ _ <
+S o _ -> Sl o ^ _ <
+Sl a 0 -> Sl0 a ^ _ <
+Sl o 0 -> Sl0 o ^ _ <
+Sl a 1 -> Sl1 a ^ _ <
+Sl o 1 -> Sl1 o ^ _ <
+Sl0 a 0 -> S _ > 0 >
+Sl0 o 0 -> S _ > 0 >
+Sl0 a 1 -> S _ > 0 >
+Sl0 o 1 -> S _ > 1 >
+Sl1 a 0 -> S _ > 0 >
+Sl1 o 0 -> S _ > 1 >
+Sl1 a 1 -> S _ > 1 >
+Sl1 o 1 -> S _ > 1 >
+S _ _ -> F _ ^ _ <
+F _ 0 -> AC 0 ^ _ <
+F _ 1 -> AC 1 ^ _ <
+

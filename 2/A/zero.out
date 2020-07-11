@@ -1,0 +1,8 @@
+start: s
+accept: a
+reject: r
+blank: _
+s _ -> a _ ^
+s 0 -> n _ >
+n 0 -> s _ >
+n _ -> r _ >

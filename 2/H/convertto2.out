@@ -1,0 +1,38 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+s 0 -> set_plus 0 <
+s 1 -> set_plus 1 <
+s 2 -> set_plus 2 <
+set_plus _ -> set_zero + <
+set_zero _ -> right 0 >
+right 0 -> right 0 >
+right 1 -> right 1 >
+right + -> rp + >
+rp 0 -> rp 0 >
+rp 1 -> rp 1 >
+rp 2 -> rp 2 >
+rp _ -> rl _ <
+rl 0 -> rl 2 <
+rl 1 -> rl1 0 <
+rl 2 -> rl1 1 <
+rl1 0 -> rl1 0 <
+rl1 1 -> rl1 1 <
+rl1 2 -> rl1 2 <
+rl1 + -> lr + <
+rl + -> righ + >
+righ 0 -> righ 0 >
+righ 1 -> righ 1 >
+righ 2 -> righ 2 >
+righ _ -> clear _ <
+clear 0 -> clear _ <
+clear 1 -> clear _ <
+clear 2 -> clear _ <
+clear + -> left _ <
+left 0 -> left 0 <
+left 1 -> left 1 <
+left _ -> ac _ >
+lr 0 -> right 1 >
+lr 1 -> lr 0 <
+lr _ -> right 1 >

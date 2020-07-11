@@ -1,0 +1,30 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+s 0 -> move 0 >
+s 1 -> move 1 >
+move 0 -> move 0 >
+move 1 -> move 1 >
+move _ -> find _ <
+find 0 -> z 2 >
+find 1 -> o 2 >
+find 2 -> find 2 <
+find 3 -> find 3 <
+find 4 -> find 4 <
+find _ -> recover _ >
+recover 2 -> recover _ >
+recover 3 -> recover 0 >
+recover 4 -> recover 1 >
+recover _ -> return _ <
+return 0 -> return 0 <
+return 1 -> return 1 <
+return _ -> ac _ >
+z _ -> find 3 <
+z 2 -> z 2 >
+z 3 -> z 3 >
+z 4 -> z 4 >
+o _ -> find 4 <
+o 2 -> o 2 >
+o 3 -> o 3 >
+o 4 -> o 4 >

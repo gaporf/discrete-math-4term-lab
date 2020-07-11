@@ -1,0 +1,24 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+s 0 -> s 0 >
+s 1 -> s 1 >
+s _ -> find _ <
+find 0 -> z 2 >
+find 1 -> o 3 >
+find 2 -> find 2 <
+find 3 -> find 3 <
+find _ -> recover _ >
+recover 2 -> recover 0 >
+recover 3 -> recover 1 >
+recover _ -> return _ <
+return 0 -> return 0 <
+return 1 -> return 1 <
+return _ -> ac _ >
+z 2 -> z 2 >
+z 3 -> z 3 >
+z _ -> find 2 <
+o 2 -> o 2 >
+o 3 -> o 3 >
+o _ -> find 3 <

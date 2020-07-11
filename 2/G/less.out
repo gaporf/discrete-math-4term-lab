@@ -1,0 +1,58 @@
+start: s
+accept: ac
+reject: rj
+blank: _
+s 0 -> right 2 >
+s 1 -> right 3 >
+right 0 -> right 0 >
+right 1 -> right 1 >
+right 2 -> right 2 >
+right 3 -> right 3 >
+right < -> righ < >
+righ 0 -> check 2 >
+righ 1 -> check 3 >
+righ 2 -> righ 2 >
+righ 3 -> righ 3 >
+check _ -> end _ <
+check 0 -> notend 0 <
+check 1 -> notend 1 <
+end 2 -> end 2 <
+end 3 -> end 3 <
+notend 2 -> notend 2 <
+notend 3 -> notend 3 <
+end < -> check_end < <
+notend < -> check_notend < <
+check_end 0 -> rj 0 ^
+check_end 1 -> rj 1 ^
+check_end 2 -> left 2 <
+check_end 3 -> left 3 <
+check_notend 2 -> ac 2 ^
+check_notend 3 -> ac 3 ^
+check_notend 0 -> find 0 <
+check_notend 1 -> find 1 <
+find 0 -> find 0 <
+find 1 -> find 1 <
+find 2 -> s 2 >
+find 3 -> s 3 >
+left 2 -> left 2 <
+left 3 -> left 3 <
+left 4 -> left 4 <
+left < -> left < <
+left _ -> comp _ >
+comp 2 -> z _ >
+comp 3 -> o _ >
+comp < -> rj < ^
+z 2 -> z 2 >
+z 3 -> z 3 >
+z < -> zz < >
+o 2 -> o 2 >
+o 3 -> o 3 >
+o < -> oo < >
+zz 4 -> zz 4 >
+oo 4 -> oo 4 >
+zz 3 -> ac 3 ^
+zz 2 -> left 4 <
+oo 2 -> rj 2 ^
+oo 3 -> left 4 <
+
+
